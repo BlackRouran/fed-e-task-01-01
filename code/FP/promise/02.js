@@ -27,7 +27,7 @@ var p2 = function square(num) {
   })
 }
 
-// p.then()的时候接受了一个回调函数 p1 此时promise中的 resolve保存了 状态 为 num+ num = 12 ,依次执行 
+// p.then()接收一个回调函数，p 中的 resolve 的结果会当作回调函数的参数  传入
 p(6).then(p1).then(p2).then((result)=>{
   console.log(`你得到的结果是${result}`)
 }).catch((err)=>{

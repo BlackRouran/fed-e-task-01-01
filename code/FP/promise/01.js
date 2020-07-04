@@ -13,8 +13,10 @@ function getNumber (value) {
   })
 }
 
-getNumber(4).then((result)=>{
-  console.log(result)
-}).catch((err)=>{
-  console.log(err)
-});
+// getNumber(4).then((result)=>{
+//   console.log(result)
+// }).catch((err)=>{
+//   console.log(err)
+// });
+
+Promise.resolve(1).then(2).then(Promise.resolve(3)).then(console.log)

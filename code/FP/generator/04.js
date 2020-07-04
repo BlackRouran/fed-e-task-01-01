@@ -1,12 +1,11 @@
-// //promiose 封装ajax
-
+//async 
 function ajax(url) {
   const promise = new Promise((resolve, reject) => {
     const XHR = new XMLHttpRequest();
     XHR.open("GET", url);
     XHR.responseType = "json";
     XHR.setRequestHeader("Accept", "application/json");
-    XHR.onreadystatechange = function (){
+    XHR.onreadystatechange = function () {
       if (this.readyState !== 4) {
         return
       }
@@ -21,12 +20,19 @@ function ajax(url) {
   return promise
 }
 
-ajax('../api/01.json').then( res => {
-  console.log(res)
-}).catch(err => {
-  console.log(err)
-})
 
-export  {
-  ajax
+async function getJson() {
+  try {
+    let result_01 = await ajax("../api/01.json")
+    console.log(result_01)
+    let result_02 = await ajax("../api/02.json")
+    console.log(result_02)
+    let result_03 = await ajax("../api/03.json")
+    console.log(result_03)
+  } catch(e){
+    console.log(e)
+  }
 }
+getJson().then( res => {
+  console.log(res)
+})
