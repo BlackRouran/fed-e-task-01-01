@@ -13,8 +13,8 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^4.3.0",
-    "webpack": "^4.43.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
